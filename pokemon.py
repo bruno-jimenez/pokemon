@@ -1,40 +1,36 @@
-import random 
-
-
 class Pokemon:
 
-    def __init__(self, nom, type, vie, degat, defense):
-        self.nom = nom
-        self.vie = vie
+    def __init__(self, nom, type, degat, defense):
+        self.__nom = nom
+        self.__vie = 100
         self.degat = degat
         self.type = type
         self.defense = defense
 
-    def information(self):
-        print(f"Pokmemon :",self.nom)
+
+    '''def information(self):
+        print(f"Pokmemon :",self.__nom)
         print(f"Type :",self.type)
-        print(f"PV :",self.vie)
+        print(f"PV :",self.__vie)
         print(f"Attaque :",self.degat)
-        print(f"Defense :",self.defense)
+        print(f"Defense :",self.defense)'''
 
 
-'''class Combat:
+    def name(self): 
+        return self.__nom
 
-    def __init__(self, joueur1, joueur2):
-        self.joueur1 = joueur1
-        self.joueur2 = joueur2
-        self.tour = 1
+    def hp(self): 
+        return self.__vie
+    
+    def modif_pv(self, newpv):
+        self.__pv += newpv
+    
+    def set_pv(self, newpv):
+        self.__pv -= newpv
 
-    def alive(self):
-        if self.vie > 0:
-            print(self.nom ,"K.O")
-        else: 
-            pass
+    def attaquer(self):
+       print(self.__nom, 'attaque', self.degat)
 
-    def attack(self):
-        resultat = random.randint(0, 1)
-        if resultat == 1:
-            self.degat '''
 
-pokemon1 = Pokemon("Girania", "spectre", 130, 20, 13 )
-pokemon1.information()
+'''pokemon = Pokemon("Girania", "spectre",20, 13 )
+pokemon.information()'''
